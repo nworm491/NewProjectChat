@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8414E3D127D0D1E000C57543 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8414E3D027D0D1E000C57543 /* Client.swift */; };
+		84F514C327C798B2001403E1 /* PSEVDOchatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F514C227C798B2001403E1 /* PSEVDOchatApp.swift */; };
+		84F514C527C798B2001403E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F514C427C798B2001403E1 /* ContentView.swift */; };
+		84F514C727C798B4001403E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F514C627C798B4001403E1 /* Assets.xcassets */; };
+		84F514CA27C798B4001403E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F514C927C798B4001403E1 /* Preview Assets.xcassets */; };
+		84F514D427C798B4001403E1 /* PSEVDOchatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F514D327C798B4001403E1 /* PSEVDOchatTests.swift */; };
+		84F514DE27C798B4001403E1 /* PSEVDOchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F514DD27C798B4001403E1 /* PSEVDOchatUITests.swift */; };
+		84F514E027C798B4001403E1 /* PSEVDOchatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F514DF27C798B4001403E1 /* PSEVDOchatUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84F514D027C798B4001403E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F514B727C798B2001403E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F514BE27C798B2001403E1;
+			remoteInfo = PSEVDOchat;
+		};
+		84F514DA27C798B4001403E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F514B727C798B2001403E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F514BE27C798B2001403E1;
+			remoteInfo = PSEVDOchat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8414E3D027D0D1E000C57543 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		84F514BF27C798B2001403E1 /* PSEVDOchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSEVDOchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F514C227C798B2001403E1 /* PSEVDOchatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEVDOchatApp.swift; sourceTree = "<group>"; };
+		84F514C427C798B2001403E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84F514C627C798B4001403E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84F514C927C798B4001403E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84F514CF27C798B4001403E1 /* PSEVDOchatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSEVDOchatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F514D327C798B4001403E1 /* PSEVDOchatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEVDOchatTests.swift; sourceTree = "<group>"; };
+		84F514D927C798B4001403E1 /* PSEVDOchatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSEVDOchatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F514DD27C798B4001403E1 /* PSEVDOchatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEVDOchatUITests.swift; sourceTree = "<group>"; };
+		84F514DF27C798B4001403E1 /* PSEVDOchatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEVDOchatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F514BC27C798B2001403E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514CC27C798B4001403E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514D627C798B4001403E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84F514B627C798B2001403E1 = {
+			isa = PBXGroup;
+			children = (
+				84F514C127C798B2001403E1 /* PSEVDOchat */,
+				84F514D227C798B4001403E1 /* PSEVDOchatTests */,
+				84F514DC27C798B4001403E1 /* PSEVDOchatUITests */,
+				84F514C027C798B2001403E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84F514C027C798B2001403E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F514BF27C798B2001403E1 /* PSEVDOchat.app */,
+				84F514CF27C798B4001403E1 /* PSEVDOchatTests.xctest */,
+				84F514D927C798B4001403E1 /* PSEVDOchatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F514C127C798B2001403E1 /* PSEVDOchat */ = {
+			isa = PBXGroup;
+			children = (
+				84F514C227C798B2001403E1 /* PSEVDOchatApp.swift */,
+				84F514C427C798B2001403E1 /* ContentView.swift */,
+				84F514C627C798B4001403E1 /* Assets.xcassets */,
+				84F514C827C798B4001403E1 /* Preview Content */,
+				8414E3D027D0D1E000C57543 /* Client.swift */,
+			);
+			path = PSEVDOchat;
+			sourceTree = "<group>";
+		};
+		84F514C827C798B4001403E1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84F514C927C798B4001403E1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84F514D227C798B4001403E1 /* PSEVDOchatTests */ = {
+			isa = PBXGroup;
+			children = (
+				84F514D327C798B4001403E1 /* PSEVDOchatTests.swift */,
+			);
+			path = PSEVDOchatTests;
+			sourceTree = "<group>";
+		};
+		84F514DC27C798B4001403E1 /* PSEVDOchatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84F514DD27C798B4001403E1 /* PSEVDOchatUITests.swift */,
+				84F514DF27C798B4001403E1 /* PSEVDOchatUITestsLaunchTests.swift */,
+			);
+			path = PSEVDOchatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F514BE27C798B2001403E1 /* PSEVDOchat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F514E327C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchat" */;
+			buildPhases = (
+				84F514BB27C798B2001403E1 /* Sources */,
+				84F514BC27C798B2001403E1 /* Frameworks */,
+				84F514BD27C798B2001403E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSEVDOchat;
+			productName = PSEVDOchat;
+			productReference = 84F514BF27C798B2001403E1 /* PSEVDOchat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84F514CE27C798B4001403E1 /* PSEVDOchatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F514E627C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchatTests" */;
+			buildPhases = (
+				84F514CB27C798B4001403E1 /* Sources */,
+				84F514CC27C798B4001403E1 /* Frameworks */,
+				84F514CD27C798B4001403E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F514D127C798B4001403E1 /* PBXTargetDependency */,
+			);
+			name = PSEVDOchatTests;
+			productName = PSEVDOchatTests;
+			productReference = 84F514CF27C798B4001403E1 /* PSEVDOchatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84F514D827C798B4001403E1 /* PSEVDOchatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F514E927C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchatUITests" */;
+			buildPhases = (
+				84F514D527C798B4001403E1 /* Sources */,
+				84F514D627C798B4001403E1 /* Frameworks */,
+				84F514D727C798B4001403E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F514DB27C798B4001403E1 /* PBXTargetDependency */,
+			);
+			name = PSEVDOchatUITests;
+			productName = PSEVDOchatUITests;
+			productReference = 84F514D927C798B4001403E1 /* PSEVDOchatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F514B727C798B2001403E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					84F514BE27C798B2001403E1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					84F514CE27C798B4001403E1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 84F514BE27C798B2001403E1;
+					};
+					84F514D827C798B4001403E1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 84F514BE27C798B2001403E1;
+					};
+				};
+			};
+			buildConfigurationList = 84F514BA27C798B2001403E1 /* Build configuration list for PBXProject "PSEVDOchat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F514B627C798B2001403E1;
+			productRefGroup = 84F514C027C798B2001403E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84F514BE27C798B2001403E1 /* PSEVDOchat */,
+				84F514CE27C798B4001403E1 /* PSEVDOchatTests */,
+				84F514D827C798B4001403E1 /* PSEVDOchatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84F514BD27C798B2001403E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F514CA27C798B4001403E1 /* Preview Assets.xcassets in Resources */,
+				84F514C727C798B4001403E1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514CD27C798B4001403E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514D727C798B4001403E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F514BB27C798B2001403E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F514C527C798B2001403E1 /* ContentView.swift in Sources */,
+				8414E3D127D0D1E000C57543 /* Client.swift in Sources */,
+				84F514C327C798B2001403E1 /* PSEVDOchatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514CB27C798B4001403E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F514D427C798B4001403E1 /* PSEVDOchatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F514D527C798B4001403E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F514DE27C798B4001403E1 /* PSEVDOchatUITests.swift in Sources */,
+				84F514E027C798B4001403E1 /* PSEVDOchatUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84F514D127C798B4001403E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F514BE27C798B2001403E1 /* PSEVDOchat */;
+			targetProxy = 84F514D027C798B4001403E1 /* PBXContainerItemProxy */;
+		};
+		84F514DB27C798B4001403E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F514BE27C798B2001403E1 /* PSEVDOchat */;
+			targetProxy = 84F514DA27C798B4001403E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		84F514E127C798B4001403E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84F514E227C798B4001403E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F514E427C798B4001403E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PSEVDOchat/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84F514E527C798B4001403E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PSEVDOchat/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84F514E727C798B4001403E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSEVDOchat.app/PSEVDOchat";
+			};
+			name = Debug;
+		};
+		84F514E827C798B4001403E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSEVDOchat.app/PSEVDOchat";
+			};
+			name = Release;
+		};
+		84F514EA27C798B4001403E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PSEVDOchat;
+			};
+			name = Debug;
+		};
+		84F514EB27C798B4001403E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PSEVDOchat-2022.PSEVDOchatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PSEVDOchat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F514BA27C798B2001403E1 /* Build configuration list for PBXProject "PSEVDOchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F514E127C798B4001403E1 /* Debug */,
+				84F514E227C798B4001403E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F514E327C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F514E427C798B4001403E1 /* Debug */,
+				84F514E527C798B4001403E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F514E627C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F514E727C798B4001403E1 /* Debug */,
+				84F514E827C798B4001403E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F514E927C798B4001403E1 /* Build configuration list for PBXNativeTarget "PSEVDOchatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F514EA27C798B4001403E1 /* Debug */,
+				84F514EB27C798B4001403E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84F514B727C798B2001403E1 /* Project object */;
+}
