@@ -45,17 +45,13 @@ struct ContentView: View {
         }
     }
 }
-
-
-func getMessage(allMessage: [String]) -> String{
-    var finalMessage = ""
-    for message in allMessage {
-        finalMessage += message
+extension String
+{
+    func replace(target: String, withString: String) -> String
+    {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
-    
-    return finalMessage
 }
-
 //этот код отвечает за чат
 struct Chat: View {
     let WighitMax:CGFloat = 100
@@ -66,10 +62,8 @@ struct Chat: View {
                 ScrollView{
                     VStack{
                         ForEach(sockserver.ReadSMS, id: \.self){sms in
-                            var allMessage = sms.components(separatedBy: ":")
                             let Name = sms.components(separatedBy: ":")[0]
-                            allMessage.removeFirst()
-                            var smsComponents: String = getMessage(allMessage: allMessage)
+                            let smsComponents = sms.replace(target: "\(Name):",withString:"")
                             
                             
                             if(Name.contains(sockserver.Name)){
@@ -93,16 +87,6 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: 60)
                                 }
-                                else if(smsComponents == "("){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: 60)
-                                    Image("obi")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: 60)
-                                }
                                 else if(smsComponents == "XD"){
                                     Text(Name)
                                         .foregroundColor(Color.black)
@@ -113,11 +97,57 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: 60)
                                 }
-                                /*else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png"))){
-                                     AsyncImage(url: URL(string: smsComponents))
-                                         .frame(width: 200, height: 200)
-                                         .offset(x: 60)
-                                 }*/
+                                else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png"))){
+                                    if(smsComponents.contains(" ")){
+                                        var url = ""
+                                        ForEach(smsComponents.components(separatedBy: " "), id: \.self){urlcheck in
+                                            if(urlcheck.contains("http") && (urlcheck.contains(".jpg") || urlcheck.contains(".png"))){
+                                                url = urlcheck
+                                            }
+                                        }
+                                        VStack{
+                                            Text(Name)
+                                                .foregroundColor(Color.black)
+                                                .frame(width: 200)
+                                                .padding()
+                                        //.offset(x: -60)
+                                            AsyncImage(url: URL(string: url))
+                                                                            { image in image
+                                                                                    .resizable()
+                                                                                    .scaledToFill()
+                                                                            } placeholder:{
+                                                                                Color.white
+                                                                            }
+                                                                            .frame(width: 200, height: 200)
+                                                                            .cornerRadius(20)
+                                                                            //.offset(x: -60)
+                                                                            .padding()
+                                        }
+                                        .border(Color.black)
+                                        .offset(x: 64)
+                                    }else{
+                                        VStack{
+                                            Text(Name)
+                                                .foregroundColor(Color.black)
+                                                .frame(width: 200)
+                                                .padding()
+                                        //.offset(x: -60)
+                                            AsyncImage(url: URL(string: smsComponents))
+                                                                            { image in image
+                                                                                    .resizable()
+                                                                                    .scaledToFill()
+                                                                            } placeholder:{
+                                                                                Color.white
+                                                                            }
+                                                                            .frame(width: 200, height: 200)
+                                                                            .cornerRadius(20)
+                                                                            //.offset(x: -60)
+                                                                            .padding()
+                                        }
+                                        .border(Color.black)
+                                        .offset(x: 64)
+                                    }
+                                 }
                                 else{
                                     Text("\(Name)\n\(smsComponents)")
                                         .padding()
@@ -147,19 +177,9 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: -60)
                                 }
-                                else if(smsComponents == "(")
-                                {
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: -60)
-                                    Image("obi")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: -60)
-                                }
                                 else if(smsComponents == "XD")
                                 {
+                                    
                                     Text(Name)
                                         .foregroundColor(Color.black)
                                         .frame(width: 200)
@@ -169,11 +189,28 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: -60)
                                 }
-                                /*else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png") ) ){
-                                    AsyncImage(url: URL(string: smsComponents))
-                                        .frame(width: 200, height: 200)
-                                        .offset(x: -60)
-                                }*/
+                                else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png") ) ){
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        //.offset(x: -60)
+                                        AsyncImage(url: URL(string: smsComponents))
+                                                                            { image in image
+                                                                                    .resizable()
+                                                                                    .scaledToFill()
+                                                                            } placeholder:{
+                                                                                Color.white
+                                                                            }
+                                                                            .frame(width: 200, height: 200)
+                                                                            .cornerRadius(20)
+                                                                            //.offset(x: -60)
+                                                                            .padding()
+                                    }
+                                    .border(Color.black)
+                                    .offset(x: -64)
+                                }
                                 else{
                                     Text("\(Name)\n\(smsComponents)")
                                         .padding()

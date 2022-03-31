@@ -19,7 +19,7 @@ public class ClientSock: NSObject {
     public  var Header = 0
    // public static var Sock = new TcpClient
     public  var Name = ""
-    public  var ReadSMS:[String] = ["Pavel:hi","test:hi"]
+    public  var ReadSMS:[String] = ["Pavel:hi","test:hi","bro:links  https://forklog.com/wp-content/uploads/cosmos2-min.png cjhecks"]
     public  var inputStream: InputStream!
     public  var outputStream: OutputStream!
     
