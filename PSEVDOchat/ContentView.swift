@@ -2,9 +2,8 @@
 import SwiftUI
 var sockserver:ClientSock = ClientSock()
 struct ContentView: View {
-     
+    
     @State var sock: String = sockserver.Name
-    @State var login = false
     @State var isTrue = false
     
     var body: some View {
@@ -19,27 +18,22 @@ struct ContentView: View {
                         .foregroundColor(Color.black)
                         .background(Color.yellow)
                     NavigationLink(destination: Chat(), isActive: $isTrue){EmptyView()}
-                        Button{
-                            if(sock != ""){
-                            self.isTrue.toggle()
+                    Button{
+                        if(sock != ""){
+                            //self.isTrue.toggle()
                             sockserver.Name = sock
-                            /*
-                            if(!login){
-                                login = true
+                            
                                 sockserver.StartConnecting()
                                 if(sockserver.Connectings){
                                     self.isTrue.toggle()
                                     //NavigationLink(destination:Chat()) { EmptyView() }
                                 }
-                                login = false
-                             }*/
-                                
-                            }
-                        }label:{
-                            Text("Login in chat")
-                                .foregroundColor(Color.black)
-                                
                         }
+                    }label:{
+                        Text("Login in chat")
+                            .foregroundColor(Color.black)
+                        
+                    }
                 }
             }
         }
@@ -56,16 +50,16 @@ extension String
 struct Chat: View {
     let WighitMax:CGFloat = 100
     @State var Sms = ""
+    @State var isReloar = false
+    
     var body: some View {
         NavigationView{
             VStack{
                 ScrollView{
                     VStack{
-                        ForEach(sockserver.ReadSMS, id: \.self){sms in
+                         ForEach(sockserver.ReadSMS, id: \.self){sms in
                             let Name = sms.components(separatedBy: ":")[0]
                             let smsComponents = sms.replace(target: "\(Name):",withString:"")
-                            
-                            
                             if(Name.contains(sockserver.Name)){
                                 if(smsComponents == ")"){
                                     Text(Name)
@@ -97,57 +91,6 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: 60)
                                 }
-                                else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png"))){
-                                    if(smsComponents.contains(" ")){
-                                        var url = ""
-                                        ForEach(smsComponents.components(separatedBy: " "), id: \.self){urlcheck in
-                                            if(urlcheck.contains("http") && (urlcheck.contains(".jpg") || urlcheck.contains(".png"))){
-                                                url = urlcheck
-                                            }
-                                        }
-                                        VStack{
-                                            Text(Name)
-                                                .foregroundColor(Color.black)
-                                                .frame(width: 200)
-                                                .padding()
-                                        //.offset(x: -60)
-                                            AsyncImage(url: URL(string: url))
-                                                                            { image in image
-                                                                                    .resizable()
-                                                                                    .scaledToFill()
-                                                                            } placeholder:{
-                                                                                Color.white
-                                                                            }
-                                                                            .frame(width: 200, height: 200)
-                                                                            .cornerRadius(20)
-                                                                            //.offset(x: -60)
-                                                                            .padding()
-                                        }
-                                        .border(Color.black)
-                                        .offset(x: 64)
-                                    }else{
-                                        VStack{
-                                            Text(Name)
-                                                .foregroundColor(Color.black)
-                                                .frame(width: 200)
-                                                .padding()
-                                        //.offset(x: -60)
-                                            AsyncImage(url: URL(string: smsComponents))
-                                                                            { image in image
-                                                                                    .resizable()
-                                                                                    .scaledToFill()
-                                                                            } placeholder:{
-                                                                                Color.white
-                                                                            }
-                                                                            .frame(width: 200, height: 200)
-                                                                            .cornerRadius(20)
-                                                                            //.offset(x: -60)
-                                                                            .padding()
-                                        }
-                                        .border(Color.black)
-                                        .offset(x: 64)
-                                    }
-                                 }
                                 else{
                                     Text("\(Name)\n\(smsComponents)")
                                         .padding()
@@ -189,28 +132,6 @@ struct Chat: View {
                                         .frame(width: 32, height: 32)
                                         .offset(x: -60)
                                 }
-                                else if(smsComponents.contains("http") && (smsComponents.contains(".jpg") || smsComponents.contains(".png") ) ){
-                                    VStack{
-                                        Text(Name)
-                                            .foregroundColor(Color.black)
-                                            .frame(width: 200)
-                                            .padding()
-                                        //.offset(x: -60)
-                                        AsyncImage(url: URL(string: smsComponents))
-                                                                            { image in image
-                                                                                    .resizable()
-                                                                                    .scaledToFill()
-                                                                            } placeholder:{
-                                                                                Color.white
-                                                                            }
-                                                                            .frame(width: 200, height: 200)
-                                                                            .cornerRadius(20)
-                                                                            //.offset(x: -60)
-                                                                            .padding()
-                                    }
-                                    .border(Color.black)
-                                    .offset(x: -64)
-                                }
                                 else{
                                     Text("\(Name)\n\(smsComponents)")
                                         .padding()
@@ -220,24 +141,28 @@ struct Chat: View {
                                         .offset(x: -80)
                                 }
                             }
+                        }.refreshable {
+                            Sms+=" "
                         }
                     }.frame(width: 450)
-            }.navigationTitle("Psevdo Online Chat")
-             .frame(height: 500)
-            HStack{
-                TextField("Message",text: $Sms)
-                    .foregroundColor(Color.black)
-                    .frame(height: 50)
-                    .padding()
-                Button{
-                    sockserver.SendSms(SMS: Sms)
-                    Sms = ""
-                }label:{
-                    Text("Send")
+                }.navigationTitle("Psevdo Online Chat")
+                    .frame(height: 500)
+                HStack{
+                    TextField("Message",text: $Sms)
                         .foregroundColor(Color.black)
+                        .frame(height: 50)
                         .padding()
+                    Button{
+                        sockserver.SendSms(SMS: "\(sockserver.Name):\(Sms)")
+                        Sms = ""
+                        self.isReloar.toggle()
+                    }label:{
+                        Text("Send")
+                            .foregroundColor(Color.black)
+                            .padding()
+                    }
                 }
-            }}
+            }
         }
     }
 }
