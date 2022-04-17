@@ -11,40 +11,49 @@ import SwiftUI
 
 
 public class ClientSock: NSObject {
-    public  let mainViewHeight = UIScreen.main.nativeBounds.height
-    public  let mainViewWidth = UIScreen.main.nativeBounds.width
     public  var Connectings = false
-    public  var Offset = 4
-    //public static var Buffer:[Byte]
-    public  var Header = 0
-    // public static var Sock = new TcpClient
     public  var Name = ""
     public  var ReadSMS:[String] = []
     public  var inputStream: InputStream!
     public  var outputStream: OutputStream!
-    
-    func streamsToHost(name hostname: String, port: Int){
-        Stream.getStreamsToHost(withName: hostname, port: port, inputStream: &inputStream, outputStream: &outputStream)
-    }
-    public  func StartConnecting() {
-        Connectings = false
+    public  var window = UIApplication.shared.windows.first
+    /*
+    func showModal() {
+            //нельзя мой код воровать ай ай ай
+            let window = UIApplication.shared.windows.first
+            window?.rootViewController?.present(UIHostingController(rootView: Chat()), animated: true)
+            
         
-        var readStream: Unmanaged<CFReadStream>?
-        var writeStream: Unmanaged<CFWriteStream>?
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault,
-                                           "92.46.87.15" as CFString,
-                                           2000,
-                                           &readStream,
-                                           &writeStream)
-        inputStream = readStream!.takeRetainedValue()
-        outputStream = writeStream!.takeRetainedValue()
-        inputStream.delegate = self
-        inputStream.schedule(in: .current, forMode: .common)
-        outputStream.schedule(in: .current, forMode: .common)
-        inputStream.open()
-        outputStream.open()
-        Connectings = true
-        SendSms(SMS: Name)
+    }*/
+    public  func StartConnecting() {
+        if(!Connectings){
+            ReadSMS = []
+            window = UIApplication.shared.windows.first
+            window?.rootViewController?.present(UIHostingController(rootView: Chat()), animated: true)
+            var readStream: Unmanaged<CFReadStream>?
+            var writeStream: Unmanaged<CFWriteStream>?
+            CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault,
+                                               "2.135.131.169" as CFString,
+                                               2000,
+                                               &readStream,
+                                               &writeStream)
+            inputStream = readStream!.takeRetainedValue()
+            outputStream = writeStream!.takeRetainedValue()
+            inputStream.delegate = self
+            inputStream.schedule(in: .current, forMode: .common)
+            outputStream.schedule(in: .current, forMode: .common)
+            inputStream.open()
+            outputStream.open()
+            Connectings = true
+        }
+    }
+    public func Exit(){
+        if(Connectings){
+            inputStream.close()
+            outputStream.close()
+            window?.rootViewController?.dismiss(animated: true, completion: nil)
+            Connectings = false
+        }
     }
     private  func readAvailableBytes(stream: InputStream) {
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 4090)
@@ -58,15 +67,16 @@ public class ClientSock: NSObject {
                 bytesNoCopy: buffer,
                 length: numberOfBytesRead,
                 encoding: .utf8,
-                freeWhenDone: true)
+                freeWhenDone: true
+            )
             if(str != ""){
                 ReadSMS.append(str ?? "")
+                window?.rootViewController?.dismiss(animated: false, completion: nil)
+                window?.rootViewController?.present(UIHostingController(rootView: Chat()), animated: false)
             }
-            delegate?.received(message: str ?? "")
         }
     }
     public  func SendSms(SMS:String){
-        ReadSMS.append("\(Name):\(SMS)")
         if(Connectings){
             let data = SMS.data(using: .utf8)!
             _ = data.withUnsafeBytes {
@@ -74,20 +84,13 @@ public class ClientSock: NSObject {
                     print("Error joining chat")
                     return
                 }
-                
                 outputStream.write(pointer, maxLength: data.count)
             }
         }
     }
-    weak var delegate: ChatRoomDelegate?
 }
-protocol ChatRoomDelegate: class {
-  func received(message: String)
-}
-
 
 extension ClientSock: StreamDelegate {
-    
     public func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case .hasBytesAvailable:
@@ -103,6 +106,4 @@ extension ClientSock: StreamDelegate {
             print("some other event...")
         }
     }
-    
-    
 }

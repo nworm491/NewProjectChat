@@ -1,6 +1,7 @@
 
 import SwiftUI
 var sockserver:ClientSock = ClientSock()
+var Chats = Chat()
 struct ContentView: View {
     
     @State var sock: String = sockserver.Name
@@ -9,7 +10,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                
                 Rectangle()
                     .frame(height: 1000)
                     .foregroundColor(Color.yellow)
@@ -17,17 +17,10 @@ struct ContentView: View {
                     TextField("Name", text: $sock)
                         .foregroundColor(Color.black)
                         .background(Color.yellow)
-                    NavigationLink(destination: Chat(), isActive: $isTrue){EmptyView()}
                     Button{
                         if(sock != ""){
-                            //self.isTrue.toggle()
                             sockserver.Name = sock
-                            
-                                sockserver.StartConnecting()
-                                if(sockserver.Connectings){
-                                    self.isTrue.toggle()
-                                    //NavigationLink(destination:Chat()) { EmptyView() }
-                                }
+                            sockserver.StartConnecting()
                         }
                     }label:{
                         Text("Login in chat")
@@ -39,6 +32,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 extension String
 {
     func replace(target: String, withString: String) -> String
@@ -46,11 +41,13 @@ extension String
         return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
 }
+
 //этот код отвечает за чат
 struct Chat: View {
     let WighitMax:CGFloat = 100
-    @State var Sms = ""
     @State var isReloar = false
+    @State var ks = true
+    @State var Sms = ""
     
     var body: some View {
         NavigationView{
@@ -61,88 +58,144 @@ struct Chat: View {
                             let Name = sms.components(separatedBy: ":")[0]
                             let smsComponents = sms.replace(target: "\(Name):",withString:"")
                             if(Name.contains(sockserver.Name)){
-                                if(smsComponents == ")"){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: 60)
-                                    Image("smail")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: 60)
+                                if(smsComponents == ")")
+                                {
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("smail")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: 60)
                                 }
-                                else if(smsComponents == ")<"){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: 60)
-                                    Image("mad")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: 60)
-                                }
-                                else if(smsComponents == "XD"){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: 60)
-                                    Image("XD")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: 60)
-                                }
-                                else{
-                                    Text("\(Name)\n\(smsComponents)")
-                                        .padding()
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .border(Color.black)
-                                        .offset(x: 80)
-                                }
-                            }else{
-                                if(smsComponents == ")"){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: -60)
-                                    Image("smail")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: -60)
-                                }
-                                else if(smsComponents == ")<"){
-                                    Text(Name)
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 200)
-                                        .padding()
-                                        .offset(x: -60)
-                                    Image("mad")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: -60)
+                                else if(smsComponents == ")<")
+                                {
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("mad")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: 60)
                                 }
                                 else if(smsComponents == "XD")
                                 {
-                                    
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("XD")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: 60)
+                                }
+                                else if(smsComponents == "test"){
                                     Text(Name)
                                         .foregroundColor(Color.black)
                                         .frame(width: 200)
                                         .padding()
-                                        .offset(x: -60)
-                                    Image("XD")
-                                        .frame(width: 32, height: 32)
-                                        .offset(x: -60)
+                                    VStack{
+                                        AsyncImage(url: URL(string: "https://developer.apple.com/news/images/og/swiftui-og-twitter.png")) { image in
+                                            image.resizable()
+                                        } placeholder: {
+                                            Color.gray
+                                        }
+                                        .frame(width: 200, height: 200)
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: 60)
                                 }
-                                else{
+                                else
+                                {
                                     Text("\(Name)\n\(smsComponents)")
                                         .padding()
                                         .foregroundColor(Color.black)
+                                        .background(Color.gray)
+                                        .cornerRadius(5)
                                         .frame(width: 200)
-                                        .border(Color.black)
+                                        .offset(x: 80)
+                                }
+                             }
+                             else
+                             {
+                                if(smsComponents == ")")
+                                 {
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("smail")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: -60)
+                                }
+                                else if(smsComponents == ")<")
+                                {
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("mad")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: -60)
+                                }
+                                else if(smsComponents == "XD")
+                                {
+                                    VStack{
+                                        Text(Name)
+                                            .foregroundColor(Color.black)
+                                            .frame(width: 200)
+                                            .padding()
+                                        Image("XD")
+                                            .frame(width: 32, height: 32)
+                                            .padding()
+                                            .padding()
+                                    }
+                                    .background(Color.gray)
+                                    .cornerRadius(5)
+                                    .offset(x: -60)
+                                }
+                                else
+                                {
+                                    Text("\(Name)\n\(smsComponents)")
+                                        .padding()
+                                        .foregroundColor(Color.black)
+                                        .background(Color.gray)
+                                        .cornerRadius(5)
+                                        .frame(width: 200)
                                         .offset(x: -80)
+                                        
                                 }
                             }
-                        }.refreshable {
-                            Sms+=" "
                         }
                     }.frame(width: 450)
                 }.navigationTitle("Psevdo Online Chat")
@@ -153,9 +206,11 @@ struct Chat: View {
                         .frame(height: 50)
                         .padding()
                     Button{
-                        sockserver.SendSms(SMS: "\(sockserver.Name):\(Sms)")
-                        Sms = ""
-                        self.isReloar.toggle()
+                        if(Sms != "" || Sms != " "){
+                            sockserver.SendSms(SMS: "\(sockserver.Name):\(Sms)")
+                            sockserver.ReadSMS.append("\(sockserver.Name):\(Sms)")
+                            Sms = ""
+                        }
                     }label:{
                         Text("Send")
                             .foregroundColor(Color.black)
@@ -166,6 +221,7 @@ struct Chat: View {
         }
     }
 }
+//эльдарадо
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
